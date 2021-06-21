@@ -24,6 +24,12 @@ public class UserAdvice {
 		return new ErrorMessage(HttpStatus.NOT_FOUND.toString(), ex.getMessage());
 	}
 	
+	@ExceptionHandler(ProductNotFoundException.class)
+	@ResponseStatus(code = HttpStatus.NOT_FOUND)
+	public ErrorMessage handleExceptionProductNotFound(ProductNotFoundException ex) {
+		return new ErrorMessage(HttpStatus.NOT_FOUND.toString(), ex.getMessage());
+	}
+	
 	@ExceptionHandler(LoginException.class)
 	@ResponseStatus(code = HttpStatus.FORBIDDEN)
 	public ErrorMessage handleLoginException(LoginException ex) {
