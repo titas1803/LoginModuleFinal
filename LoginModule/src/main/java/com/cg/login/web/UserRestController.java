@@ -62,7 +62,7 @@ public class UserRestController {
 	/*
 	 * Controller Method to view all users of a specific location
 	 */
-	@GetMapping("viewbylocation/{location}")
+	@GetMapping("viewusersbylocation/{location}")
 	public List<User> viewByLocation(@PathVariable("location") String location,
 			@RequestHeader("token-id") String tokenId) throws LoginException, UserNotFoundException {
 		if (loginSer.verifyLogin(tokenId)) {
@@ -74,7 +74,7 @@ public class UserRestController {
 	/*
 	 * Controller method to view all users of a specific name
 	 */
-	@GetMapping("viewbyname/{userName}")
+	@GetMapping("viewusersbyname/{userName}")
 	public List<User> viewByName(@PathVariable("userName") String userName,
 			@RequestHeader("token-id") String tokenId) throws LoginException, UserNotFoundException {
 		if (loginSer.verifyLogin(tokenId)) {
