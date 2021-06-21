@@ -44,7 +44,7 @@ public class UserRestController {
 		if (br.hasErrors())
 			throw new ValidateUserException(br.getFieldErrors());
 		Integer userId=userSer.createUser(userdto);
-		return new SuccessMessage(LoginConstants.USER_CREATED+" for id "+userId);
+		return new SuccessMessage(LoginConstants.USER_CREATED+userId);
 	}
 
 	/*

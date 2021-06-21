@@ -4,7 +4,7 @@ import javax.validation.constraints.NotBlank;
 
 import com.cg.login.util.ProductConstants;
 
-public class prodDto {
+public class ProdDto {
 	
 	@NotBlank(message = ProductConstants.ID_NOT_NULL)
 	private Integer prodId;
@@ -18,7 +18,7 @@ public class prodDto {
 	@NotBlank(message = ProductConstants.IMG_NOT_NULL)
 	private String prodImg;
 
-	public prodDto() {
+	public ProdDto() {
 		super();
 	}
 

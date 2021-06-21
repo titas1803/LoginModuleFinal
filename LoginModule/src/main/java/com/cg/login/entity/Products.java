@@ -30,6 +30,10 @@ public class Products {
 		this.prodImg = prodImg;
 	}
 
+	public Products() {
+		
+	}
+
 	public Integer getProdId() {
 		return prodId;
 	}

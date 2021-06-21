@@ -7,6 +7,7 @@ public class ProductConstants {
 	public static final String NAME_NOT_NULL="Product Name can't be blank";
 	public static final String COST_NOT_NULL="Product Cost Cannot be blank";
 	public static final String IMG_NOT_NULL="Product Img can't be blank";
-	
+	public static final String PRODUCT_EXISTS="Product already exists";
+	public static final String PRODUCT_CREATED="Product Created for ID ";
 
 }
