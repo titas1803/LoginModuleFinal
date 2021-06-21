@@ -23,7 +23,6 @@ public class ProductRestController {
 	@Autowired
 	private ILoginService loginSer;
 	
-	
 
 	@GetMapping("viewprodsbyname/{prodName}")
 	public List<Products> viewbyName(@PathVariable("prodName") String prodName,
