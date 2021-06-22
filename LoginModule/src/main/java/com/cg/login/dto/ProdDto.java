@@ -1,18 +1,19 @@
 package com.cg.login.dto;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.cg.login.util.ProductConstants;
 
 public class ProdDto {
 	
-	@NotBlank(message = ProductConstants.ID_NOT_NULL)
+	@NotNull(message = ProductConstants.ID_NOT_NULL)
 	private Integer prodId;
 	
 	@NotBlank(message = ProductConstants.NAME_NOT_NULL)
 	private String prodName;
 	
-	@NotBlank(message = ProductConstants.COST_NOT_NULL)
+	@NotNull(message = ProductConstants.COST_NOT_NULL)
 	private Double prodCost;
 	
 	@NotBlank(message = ProductConstants.IMG_NOT_NULL)

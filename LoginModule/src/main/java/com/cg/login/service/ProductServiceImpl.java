@@ -27,7 +27,7 @@ public class ProductServiceImpl implements IProductService{
 		if(optprodbyId.isPresent())
 			throw new AlreadyExists(ProductConstants.PRODUCT_EXISTS);
 		List<Products> optUserbyName=productdao.findByName(prodto.getProdName());
-		if(optUserbyName.isEmpty())
+		if(!optUserbyName.isEmpty())
 			throw new AlreadyExists(ProductConstants.PRODUCT_EXISTS);
 		Products prod = new Products();
 		prod.setProdId(prodto.getProdId());
