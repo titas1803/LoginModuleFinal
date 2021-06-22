@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,6 +39,7 @@ public class UserRestController {
 	/*
 	 * Controller Method for creating new Account
 	 */
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("createuser")
 	public SuccessMessage createUserRegistration(@Valid @RequestBody UserDto userdto, BindingResult br)
 			throws ValidateUserException, AlreadyExists {
@@ -50,6 +52,7 @@ public class UserRestController {
 	/*
 	 * Controller Method to view all users' details
 	 */
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("viewusers")
 	public List<User> viewUsers(@RequestHeader("token-id") String tokenId)
 			throws LoginException, UserNotFoundException {
@@ -74,6 +77,7 @@ public class UserRestController {
 	/*
 	 * Controller method to view all users of a specific name
 	 */
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("viewusersbyname/{userName}")
 	public List<User> viewByName(@PathVariable("userName") String userName,
 			@RequestHeader("token-id") String tokenId) throws LoginException, UserNotFoundException {

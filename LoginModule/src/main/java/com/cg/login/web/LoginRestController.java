@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,6 +37,7 @@ public class LoginRestController {
 	/*
 	 * Controller Method for Login
 	 */
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("login")
 	public LoginResponse doLoginController(@Valid @RequestBody LoginDto logindto, BindingResult br) throws LoginException, ValidateUserException
 	{
@@ -54,6 +56,7 @@ public class LoginRestController {
 	/*
 	 * Controller method for logging out
 	 */
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(value="logout")
 	public SuccessMessage logout(@RequestHeader("token-id") String token, HttpServletRequest req) {
 		service.getAuthMap().remove(token);

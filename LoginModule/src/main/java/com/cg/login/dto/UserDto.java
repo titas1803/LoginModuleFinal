@@ -36,8 +36,8 @@ public class UserDto {
 	@NotBlank(message = LoginConstants.LOCATION_BLANK_MESSAGE)
 	private String location;
 
+//	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[.@#$%^&+=_])(?=\\S+$).{8,20}$", message = LoginConstants.PASSWORD_PATTERN)
 	@NotBlank(message = LoginConstants.PASSWORD_BLANK_MESSAGE)
-	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[.@#$%^&+=_])(?=\\S+$).{8,20}$", message = LoginConstants.PASSWORD_PATTERN)
 	private String password;
 
 	@NotBlank(message = LoginConstants.ROLE_BLANK_MESSAGE)
