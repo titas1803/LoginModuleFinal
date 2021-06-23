@@ -55,7 +55,7 @@ public class ProductRestController {
 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("viewprodbyid/{prodId}")
-	public Products viewbyID(@PathVariable("prodId") Integer prodId, @RequestHeader("token-id") String tokenId)
+	public Products viewbyID(@PathVariable("prodId") int prodId, @RequestHeader("token-id") String tokenId)
 			throws ProductNotFoundException, LoginException {
 		if (loginSer.verifyLogin(tokenId)) {
 			return prodServ.viewById(prodId);
