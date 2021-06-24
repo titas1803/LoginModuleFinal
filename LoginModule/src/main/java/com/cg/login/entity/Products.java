@@ -13,13 +13,13 @@ public class Products {
 	@Column(name = "prod_id")
 	private Integer prodId;
 	
-	@Column(name="prod_name", length = 30)
+	@Column(name="prod_name", length = 100)
 	private String prodName;
 	
 	@Column(name = "prod_cost")
 	private Double prodCost;
 	
-	@Column(name= "prod_imgurl", length=120)
+	@Column(name= "prod_imgurl", length=250)
 	private String prodImg;
 
 	public Products(Integer prodId, String prodName, Double prodCost, String prodImg) {
