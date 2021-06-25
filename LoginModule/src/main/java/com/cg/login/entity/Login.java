@@ -20,7 +20,7 @@ public class Login{
 	@Column(name = "user_id")
 	private Integer userId;
 	
-	@Column(name="login_password",length=25)
+	@Column(name="login_password",length=125)
 	private String password;
 	
 	@Column(name="login_role",length=25)

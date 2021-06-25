@@ -27,6 +27,7 @@ import com.cg.login.util.LoginConstants;
 /*
  * Created by Soumendu Maitra
  */
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class UserRestController {
 
@@ -39,7 +40,7 @@ public class UserRestController {
 	/*
 	 * Controller Method for creating new Account
 	 */
-	@CrossOrigin(origins = "http://localhost:4200")
+//	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("createuser")
 	public SuccessMessage createUserRegistration(@Valid @RequestBody UserDto userdto, BindingResult br)
 			throws ValidateUserException, AlreadyExists {
@@ -52,7 +53,7 @@ public class UserRestController {
 	/*
 	 * Controller Method to view all users' details
 	 */
-	@CrossOrigin(origins = "http://localhost:4200")
+//	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("viewusers")
 	public List<User> viewUsers(@RequestHeader("token-id") String tokenId)
 			throws LoginException, UserNotFoundException {
@@ -65,7 +66,7 @@ public class UserRestController {
 	/*
 	 * Controller Method to view all users of a specific location
 	 */
-	@GetMapping("viewusersbylocation/{location}")
+//	@GetMapping("viewusersbylocation/{location}")
 	public List<User> viewByLocation(@PathVariable("location") String location,
 			@RequestHeader("token-id") String tokenId) throws LoginException, UserNotFoundException {
 		if (loginSer.verifyLogin(tokenId)) {
@@ -77,7 +78,7 @@ public class UserRestController {
 	/*
 	 * Controller method to view all users of a specific name
 	 */
-	@CrossOrigin(origins = "http://localhost:4200")
+//	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("viewusersbyname/{userName}")
 	public List<User> viewByName(@PathVariable("userName") String userName,
 			@RequestHeader("token-id") String tokenId) throws LoginException, UserNotFoundException {

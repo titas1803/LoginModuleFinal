@@ -25,10 +25,10 @@ public class ProductServiceImpl implements IProductService{
 	public Integer addProduct(ProdDto prodto) throws AlreadyExists {
 		Optional<Products> optprodbyId=productdao.findById(prodto.getProdId());
 		if(optprodbyId.isPresent())
-			throw new AlreadyExists(ProductConstants.PRODUCT_EXISTS);
+			throw new AlreadyExists(ProductConstants.PRODUCT_ID_EXISTS);
 		List<Products> optUserbyName=productdao.findByName(prodto.getProdName());
 		if(!optUserbyName.isEmpty())
-			throw new AlreadyExists(ProductConstants.PRODUCT_EXISTS); 
+			throw new AlreadyExists(ProductConstants.PRODUCT_NAME_EXISTS); 
 		Products prod = new Products();
 		prod.setProdId(prodto.getProdId());
 		prod.setProdName(prodto.getProdName().toLowerCase());
