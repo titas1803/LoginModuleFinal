@@ -2,9 +2,18 @@ package com.cg.login.dto;
 
 public class LoginResponse {
 
+	private Integer userId;
 	private String token;
 	private String userName;
 	private String role;
+	
+	
+	public Integer getUserId() {
+		return userId;
+	}
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
 	public String getToken() {
 		return token;
 	}

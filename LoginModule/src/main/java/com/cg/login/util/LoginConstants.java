@@ -32,6 +32,7 @@ public class LoginConstants {
 	public static final String NOT_ADMIN="You are not a admin";
 	public static final String CONTACT_EXISTS="Account with same contact already exists";
 	public static final String EMAILID_EXISTS="Account with same email id already exists";
+	public static final String PASSWORD_DOESNT_MATCH = "Old password doesnot match";
 	private LoginConstants() {
 		super();
 	}

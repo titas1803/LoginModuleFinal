@@ -17,4 +17,5 @@ public interface ILoginService {
 	public String generateToken(Login login);
 	public Map<String, Login> getAuthMap();
 	public boolean verifyLogin(String tokenId) throws LoginException;
+	public void changePassword(Integer userId,String oldPassword, String password) throws LoginException;
 }

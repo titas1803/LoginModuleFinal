@@ -47,6 +47,7 @@ public class LoginRestController {
 			throw new ValidateUserException(br.getFieldErrors());
 		Login login=service.doLogin(logindto.getUserId(), logindto.getPassword());
 		LoginResponse response= new LoginResponse();
+		response.setUserId(login.getUserId());
 		response.setToken(service.generateToken(login));
 		response.setUserName(login.getUser().getUserName());
 		response.setRole(login.getRole());
@@ -61,6 +62,16 @@ public class LoginRestController {
 	public SuccessMessage logout(@RequestHeader("token-id") String token, HttpServletRequest req) {
 		service.getAuthMap().remove(token);
 		return new SuccessMessage(LoginConstants.LOGGED_OUT);
+	}
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@PostMapping("changepassword")
+	public SuccessMessage changePassword(@RequestHeader("token-id") String token, @Valid @RequestBody LoginDto logindto,
+			BindingResult br) throws ValidateUserException, LoginException {
+		if (br.hasErrors())
+			throw new ValidateUserException(br.getFieldErrors());
+		service.changePassword(logindto.getUserId(), logindto.getPassword(), logindto.getNewPassword());
+		return new SuccessMessage("Password Changed");
 	}
 
 }

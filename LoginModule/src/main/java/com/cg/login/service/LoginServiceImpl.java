@@ -103,5 +103,15 @@ public class LoginServiceImpl implements ILoginService {
 		return true;
 	}
 	
-
+	@Override
+	public void changePassword(Integer userId, String oldPassword, String newPassword) throws LoginException {
+		Optional<Login> optLogin=logindao.findById(userId);
+		if(!optLogin.isPresent())
+			throw new LoginException(LoginConstants.CHECK_YOUR_CREDENTIALS);
+		Login login=optLogin.get();
+		if(!login.getPassword().equals(encryptString(oldPassword)))
+			throw new LoginException(LoginConstants.PASSWORD_DOESNT_MATCH);
+		login.setPassword(encryptString(newPassword));
+		Login persisted=logindao.saveAndFlush(login);
+	}
 }
