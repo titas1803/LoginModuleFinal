@@ -1,5 +1,6 @@
 package com.cg;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
@@ -53,7 +54,7 @@ class TestCreateUser {
 	void testCreateUser() throws AlreadyExists
 	{
 		UserDto userdto=new UserDto(1001, "abcd", "1234567890", "abcd@ghf.com", LocalDate.of(2020, 12, 30), "sodepur", "kolkata", "Abcd@123", "user");		
-		assertNotNull(userSer.createUser(userdto));
+		assertEquals(userSer.createUser(userdto),1001);
 	}
 }
 

@@ -43,19 +43,18 @@ public class LoginServiceImpl implements ILoginService {
 	}
 
 	/*
+	 * getter method for Map
+	 */
+	public Map<String, Login> getAuthMap() {
+		return authMap;
+	}
+	/*
 	 * Method to put the token into Map
 	 */
 	public String generateToken(Login login) {
 		String token = encryptLogin(login);
 		authMap.put(token, login);
 		return token;
-	}
-
-	/*
-	 * getter method for Map
-	 */
-	public Map<String, Login> getAuthMap() {
-		return authMap;
 	}
 
 	/*
